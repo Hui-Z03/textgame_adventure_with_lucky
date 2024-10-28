@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hui's Projects</title>
+    <style>
+        /* new line */
+        p {
+            word-wrap: break-word;
+            white-space: pre-line;
+            font-size: 22px;
+        }
+        /* in the middle */
+        .center-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        /* pic shown size */
+        img {
+            max-width: 359px;
+            height: 359px;
+            object-fit:cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Hui's practice projects</h1>
+
+    <!-- center-content -->
+    <div class="center-content">
+    <h1>Adventure with Lucky</h1>
+        <!-- show pic -->
+        <div>
+            <img src="{{ image }}" alt="Scene Image">
+        </div>
+
+        <!-- new line after full stop -->
+        <p>{{ description|safe }}</p>
+
+        <!-- choices button -->
+        {% if choices %}
+            <form method="POST">
+                {% for key, value in choices.items() %}
+                    <button type="submit" name="choice" value="{{ key }}">Option {{ key }}</button>
+                {% endfor %}
+            </form>
+        {% else %}
+            <p>Game Over!</p>
+            <!-- restart -->
+            <form method="POST">
+                <button type="submit" name="choice" value="restart">Restart Game</button>
+            </form>
+        {% endif %}
+
+        <!-- error infor -->
+        {% if error_message %}
+            <p style="color:red;">{{ error_message }}</p>
+        {% endif %}
+    </div>
+<br>
+<br>
+<br>
+</body>
+</html>
