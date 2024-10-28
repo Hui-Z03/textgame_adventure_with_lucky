@@ -1,7 +1,8 @@
 # textgame_adventure_with_lucky
 interactive text-based game written in Python and Flask,   
 designed for my 6-year-old son.  
-[test url](https://adventure-with-lucky-bsb7bcgrcbdvekh9.australiasoutheast-01.azurewebsites.net/)
+[test url](https://adventure-with-lucky-bsb7bcgrcbdvekh9.australiasoutheast-01.azurewebsites.net/)  
+Deployed on Azure App Service
 
 **About the Game**  
 This is a story about a little child helping a puppy named "Lucky" rescue its mother.  
